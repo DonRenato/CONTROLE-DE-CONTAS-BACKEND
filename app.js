@@ -22,10 +22,14 @@ class App{
                 useUnifiedTopology: true
             })
 
+        new User();
+
+        const userRoute = require('./src/route/UserRoute');
+
 
 
         this.app.get('/', (req, res)=>{
-            res.send("HELLO WORLD!!!");
+            res.send("Controle de Contas Backend - NYD");
         })
 
         this.app.listen(config.port, ()=>{
