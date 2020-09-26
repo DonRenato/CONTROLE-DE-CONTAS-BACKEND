@@ -26,7 +26,7 @@ class BillController{
         try {
             let deleteBill = req.body
             await bill.findByIdAndDelete(deleteBill._id)
-            res.send().status(200)
+            res.send().status(204)
            } catch (error) {
             console.log("[BILLS] : DELETE => ERROR:" + error)
             res.status(500).send("Error during deleting bills");

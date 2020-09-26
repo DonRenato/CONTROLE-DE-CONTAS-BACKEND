@@ -25,7 +25,8 @@ class UserController{
     static async update(req, res){
         try {
             let editUser = req.body
-            res.status(200).json( await user.findByIdAndUpdate(editUser._id, editUser)) 
+            await user.findByIdAndUpdate(editUser._id, editUser)
+            res.send().status(204)
            } catch (error) {
             console.log("[USERS] : CREATE => ERROR:" + error)
             res.status(500).send("Error during updating users");
