@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const env = process.NODE_ENV || "development";
 const config = require('./config.json')[env];
+const User = require('./src/model/User')
 
 class App{
     constructor(){
