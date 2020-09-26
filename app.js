@@ -5,6 +5,7 @@ const cors = require('cors');
 const env = process.NODE_ENV || "development";
 const config = require('./config.json')[env];
 const User = require('./src/model/User')
+const Bill = require('./src/model/Bill')
 
 class App{
     constructor(){
@@ -24,9 +25,13 @@ class App{
             })
 
         new User();
+        new Bill();
 
         const UserRoute = require('./src/route/UserRoute');
         new UserRoute(this.app)
+
+        const BillRoute = require('./src/route/BillRoute');
+        new BillRoute(this.app)
 
 
         this.app.get('/', (req, res)=>{

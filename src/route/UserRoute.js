@@ -8,6 +8,7 @@ class UserRoute{
             .put(UserController.update)
             
     }
+
 }
 
 module.exports = UserRoute
