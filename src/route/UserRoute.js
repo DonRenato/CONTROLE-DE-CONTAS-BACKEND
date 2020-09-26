@@ -6,7 +6,7 @@ class UserRoute{
             .get(UserController.list)
             .post(UserController.create)
             .put(UserController.update)
-            .delete(UserController.delete)
+            
     }
 }
 

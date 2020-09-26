@@ -19,13 +19,14 @@ class App{
         mongoose.connect(`${config.database.protocol}://${config.database.user}:${config.database.password}@${config.database.host}/${config.database.name}b?retryWrites=true&w=majority`,
             {
                 useNewUrlParser: true,
-                useUnifiedTopology: true
+                useUnifiedTopology: true,
+                useFindAndModify:true
             })
 
         new User();
 
-        const userRoute = require('./src/route/UserRoute');
-
+        const UserRoute = require('./src/route/UserRoute');
+        new UserRoute(this.app)
 
 
         this.app.get('/', (req, res)=>{
