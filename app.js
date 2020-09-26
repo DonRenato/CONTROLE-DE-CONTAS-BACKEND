@@ -15,10 +15,11 @@ class App{
         this.app.use(express.json());
         this.app.use(cors())
 
-        mongoose.connect(`${config.database.protocol}://${config.database.user}:${config.database.password}@${config.database.host}/${config.database.name}b?retryWrites=true&w=majority`, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
+        mongoose.connect(`${config.database.protocol}://${config.database.user}:${config.database.password}@${config.database.host}/${config.database.name}b?retryWrites=true&w=majority`,
+            {
+                useNewUrlParser: true,
+                useUnifiedTopology: true
+            })
 
 
 
@@ -26,8 +27,8 @@ class App{
             res.send("HELLO WORLD!!!");
         })
 
-        this.app.listen(3000, ()=>{
-            console.log("Server running on port 3000 ")
+        this.app.listen(config.port, ()=>{
+            console.log(`Server running on port ${config.port}`)
         })
     }
 }
