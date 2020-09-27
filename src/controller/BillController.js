@@ -24,8 +24,8 @@ class BillController{
 
     static async delete(req, res){
         try {
-            let deleteBill = req.body
-            await bill.findByIdAndDelete(deleteBill._id)
+            const billId = req.params.id
+            await bill.findByIdAndDelete(billId)
             res.send().status(204)
            } catch (error) {
             console.log("[BILLS] : DELETE => ERROR:" + error)
