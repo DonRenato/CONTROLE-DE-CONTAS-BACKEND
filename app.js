@@ -38,7 +38,7 @@ class App{
             res.send("Controle de Contas Backend - NYD");
         })
 
-        this.app.listen(config.port, ()=>{
+        this.app.listen(process.env.PORT, ()=>{
             console.log(`Server running on port ${config.port}`)
         })
     }
